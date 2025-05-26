@@ -1,0 +1,20 @@
+Compile Sender code
+g++ sender.cpp -o sender $(pkg-config --cflags --libs gstreamer-1.0)
+
+Compile Tracker code
+g++ tracker.cpp -o tracker
+
+Compile Receiver code
+g++ receiver.cpp -o receiver $(pkg-config --cflags --libs gstreamer-1.0 gtk+-3.0 gstreamer-video-1.0)
+
+Firstly Run Tracker code
+./tracker
+
+Run sender code
+./sender 127.0.0.1 23007
+
+Run receiver code  
+./receiver 127.0.0.1 23008
+
+MULTICAST_IP - 239.0.0.1
+MULTICAST_PORT - 8888
